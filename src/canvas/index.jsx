@@ -1,13 +1,16 @@
 import { Canvas } from '@react-three/fiber'
 import { Environment, Center } from '@react-three/drei';
 import { OrbitControls } from '@react-three/drei';
-
+import React, { useState } from 'react';
+import { useCart } from '../context/cartContext'
 import Shirt from './Shirt';
 import Backdrop from './Backdrop';
 import CameraRig from './CameraRig';
 
-const CanvasModel = () => {
+const CanvasModel = () => { 
+   
   return (
+      
     <Canvas
       shadows
       camera={{ position: [0, 0, 0], fov: 25 }}
@@ -21,15 +24,15 @@ const CanvasModel = () => {
   enablePan={false}
   maxPolarAngle={Math.PI / 2}
   minPolarAngle={Math.PI / 4}
+  enableRotate={true}
 />
       <CameraRig>
         <Backdrop />
         <Center>
-          <Shirt />
+          <Shirt/>
         </Center>
       </CameraRig>
     </Canvas>
-  )
-}
+  )}
 
 export default CanvasModel
