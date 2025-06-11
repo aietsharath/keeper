@@ -65,21 +65,6 @@ const CartUI = ({ cartItems, onClose, onConfirmPayment }) => {
         Pay with Google Pay
       </a>
 
-      {/* A fallback confirm button for demo */}
-      <button
-        onClick={onConfirmPayment}
-        style={{
-          marginTop: '10px',
-          padding: '10px 20px',
-          borderRadius: '5px',
-          border: 'none',
-          backgroundColor: '#007bff',
-          color: 'white',
-          cursor: 'pointer',
-        }}
-      >
-        Confirm Order (Demo)
-      </button>
     </div>
   );
 };

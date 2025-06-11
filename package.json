@@ -12,9 +12,11 @@
   "dependencies": {
     "@react-three/drei": "^10.1.2",
     "@react-three/fiber": "^9.1.2",
+    "@supabase/supabase-js": "^2.50.0",
     "@tailwindcss/vite": "^4.1.8",
     "buffer": "^6.0.3",
     "crypto-browserify": "^3.12.1",
+    "dotenv": "^16.5.0",
     "framer-motion": "^12.15.0",
     "maath": "^0.10.8",
     "react": "^19.1.0",

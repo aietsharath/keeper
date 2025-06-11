@@ -1,22 +1,31 @@
-import Canvas from './canvas';
-import GPayButton from './gpay/upi';
+import { AuthProvider, useAuth } from './components/AuthContext';
+import AuthScreen from './components/AuthScreen';
 import Customizer from './pages/Customizer';
-import Home from './pages/Home';
-import { CartProvider } from './context/cartContext'
 import CanvasModel from './canvas';
+import Home from './pages/Home';
+import { CartProvider } from './context/cartContext';
 
-function App() {
+function ProtectedApp() {
+  const { user } = useAuth();
+  if (!user) return <AuthScreen />;
+
   return (
     <main className="app transition-all ease-in">
       <Home />
-        
       <CanvasModel />
-     <CartProvider>
-      <Customizer />
+      <CartProvider>
+        <Customizer />
       </CartProvider>
-    
     </main>
-  )
+  );
 }
 
-export default App
+function App() {
+  return (
+    <AuthProvider>
+      <ProtectedApp />
+    </AuthProvider>
+  );
+}
+
+export default App;
