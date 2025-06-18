@@ -44,6 +44,13 @@ const Customizer = () => {
     stylishShirt: false,
   });
   const [isCartVisible, setIsCartVisible] = useState(false);
+  const [isAddressFormVisible, setIsAddressFormVisible] = useState(false);
+  const [addressForm, setAddressForm] = useState({
+  pincode: '', city: '', district: '', state: '',
+  detailedAddress: '', houseNo: '', street: '', landmark: '',
+  mobile: '', isMobileVerified: false,
+  age: '', gender: ''
+});
 
   const handleAddToCart = () => {
     const shirtItem = {
@@ -55,6 +62,7 @@ const Customizer = () => {
       quantity,
     };
     addToCart(shirtItem);
+    setIsAddressFormVisible(true);
     setIsCartVisible(true);
   };
 
